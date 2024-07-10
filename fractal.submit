@@ -1,0 +1,26 @@
+# template.sub
+# starter submit file for CHTC jobs
+
+universe = container
+container_image = software/goatbrot.sif
+transfer_executable = false
+
+log = logs/mandel_$(Cluster).log
+error = logs/mandel_$(Cluster)_$(Process).err
+output = logs/mandel_$(Cluster)_$(Process).out
+
++ProjectName = "OSG-Staff"
+
+executable = /usr/local/bin/goatbrot
+arguments = -i 1000 -o $(tileout) -c $(x),$(y) -w 1.5 -s 500,500
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+#transfer_input_files = software/goatbrot.sif
+transfer_output_remaps = "$(tileout)=tiles/$(tileout)"
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue tileout,x,y from tiles.txt

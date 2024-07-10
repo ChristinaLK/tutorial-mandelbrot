@@ -1,0 +1,9 @@
+Bootstrap: docker
+From: opensciencegrid/osgvo-ubuntu-xenial:latest
+
+%post
+  apt update && apt install -yy imagemagick
+  git clone https://github.com/beejjorgensen/goatbrot
+  cd goatbrot
+  make
+  mv goatbrot /usr/local/bin

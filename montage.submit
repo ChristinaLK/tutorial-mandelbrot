@@ -1,0 +1,25 @@
+# template.sub
+# starter submit file for CHTC jobs
+
+universe = container
+container_image = software/goatbrot.sif
+transfer_executable = false
+
+log = logs/montage_$(Cluster).log
+error = logs/montage_$(Cluster)_$(Process).err
+output = logs/montage_$(Cluster)_$(Process).out
+
++ProjectName = "OSG-Staff"
+
+executable = /usr/bin/montage
+arguments = tile_000000_000000.ppm tile_000000_000001.ppm tile_000001_000000.ppm tile_000001_000001.ppm -mode Concatenate -tile 2x2 mandel.jpg
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = software/goatbrot.sif, tiles/
+
+request_cpus = 1
+request_memory = 1GB
+request_disk = 1GB
+
+queue 1

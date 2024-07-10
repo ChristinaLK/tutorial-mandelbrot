@@ -1,0 +1,20 @@
+000 (633359.000.000) 2023-12-22 11:36:41 Job submitted from host: <128.105.68.92:9618?addrs=128.105.68.92-9618+[2607-f388-2200-100-eaeb-d3ff-fe40-111c]-9618&alias=ap40.uw.osg-htc.org&noUDP&sock=schedd_2217954_8a7d>
+    WARNING: Committed job submission into the queue with the following warning(s): QMGMT:0:Do not use HTCondor file transfers for container images as it does not scale to a large number of jobs. Instead, use OSDF: https://portal.osg-htc.org/documentation/htc_workloads/using_software/containers-singularity/
+...
+040 (633359.000.000) 2023-12-22 11:42:55 Started transferring input files
+	Transferring to host: <192.170.241.165:45387?CCBID=128.104.103.162:9618%3faddrs%3d128.104.103.162-9618%26alias%3dospool-ccb.osg.chtc.io%26noUDP%26sock%3dcollector5#30526532%20192.170.231.9:9618%3faddrs%3d192.170.231.9-9618+[fd85-ee78-d8a6-8607--1-6dd5]-9618%26alias%3dospool-ccb.osgprod.tempest.chtc.io%26noUDP%26sock%3dcollector3#1403638&PrivNet=uct2-c632.mwt2.org&addrs=192.170.241.165-45387+[2605-9a00-10-200a-5e6f-69ff-fe8e-a410]-45387&alias=uct2-c632.mwt2.org&noUDP>
+...
+040 (633359.000.000) 2023-12-22 11:42:55 Finished transferring input files
+...
+007 (633359.000.000) 2023-12-22 11:42:55 Shadow exception!
+	Error from slot1@glidein_55274_415712736@uct2-c632.mwt2.org: SHADOW at 128.105.68.92 failed to send file(s) to <192.170.241.165:43019>: |Error: reading from file /home/christina.koch/tutorials/goatbrot/goatbrot.sif: (errno 2) No such file or directory; STARTER failed to receive file(s) from <128.105.68.92:9618>
+	0  -  Run Bytes Sent By Job
+	3000152  -  Run Bytes Received By Job
+...
+012 (633359.000.000) 2023-12-22 11:42:56 Job was held.
+	Transfer input files failure at access point ap40 while sending files to execution point slot1@glidein_55274_415712736@uct2-c632.mwt2.org. Details: reading from file /home/christina.koch/tutorials/goatbrot/goatbrot.sif: (errno 2) No such file or directory
+	Code 13 Subcode 2
+...
+009 (633359.000.000) 2023-12-22 11:48:45 Job was aborted.
+	via condor_rm (by user christina.koch)
+...
