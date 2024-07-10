@@ -1,5 +1,7 @@
 .ipynb_checkpoints/
-logs/mandel*
+logs/*.log
+logs/*.err
+logs/*.out
 software/*.sif
 tiles/*.ppm
 *.jpg
