@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+logs/mandel*
+software/*.sif
+tiles/*.ppm
+*.jpg
